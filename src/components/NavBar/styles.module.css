@@ -1,7 +1,9 @@
 .headerWrapper{
-    background: var(--yellow-secondary);
     padding:0.5rem 0;
     width:100%;
+}
+.headerBackgound{
+    background: var(--yellow-secondary);
 }
 .navWrapper{
     align-items: center;
@@ -23,4 +25,7 @@
 }
 .navLogo{
     width:6rem;
+}
+.navShoppingCart{
+    font-size: 2rem;
 }
