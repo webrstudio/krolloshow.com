@@ -6,8 +6,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <h1>KROLLOSHOW</h1>
-      <span>lorem10</span>
+      
     </main>
   );
 }

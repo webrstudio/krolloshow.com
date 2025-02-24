@@ -1,0 +1,26 @@
+.headerWrapper{
+    background: var(--yellow-secondary);
+    padding:0.5rem 0;
+    width:100%;
+}
+.navWrapper{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
+.navList{
+    display:flex;
+    gap:2rem;
+    list-style: none;
+}
+.navList a{
+    color:var(--black-primary);
+    text-decoration: none;
+}
+.navList a:hover{
+    text-decoration: underline;
+}
+.navLogo{
+    width:6rem;
+}

@@ -18,4 +18,11 @@ body{
   --red-primary:#fe0100;
   --white-primary:#fffbf9;
   --yellow-primary:#fcf102;
+  --yellow-secondary:#ffde59;
+}
+/*flexContainer*/
+.flexContainer{
+  margin:0 auto;
+  max-width:1200px;
+  width:80%;
 }
