@@ -1,3 +1,67 @@
 .jumbotronWrapper{
-    
+  background: url('../../../../../../public/assets/images/krollo-banner.jpg');
+  background-position: bottom;
+  background-size:cover;
+  height:100vh;  
+}
+.jumbotronMask{
+  align-items: center;
+  background: #ffffff3f;
+  display:flex;
+  flex-direction: column;
+  height:100%;
+}
+.jumbotronTitles{
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  height:100%;
+  justify-content: space-between;
+  padding:2rem 0;  
+  width: 100%;
+}
+.jumbotronImage{
+  width:13%;
+}
+.jumbotronButtons{
+  align-items: center;
+  display:flex;
+  gap:1rem;
+  justify-content: center;
+  margin:0 auto;
+  width:60%;
+}
+.jumbotronButtons a{
+  align-items: start;
+  background: var(--white-primary);
+  border-radius: 9px;
+  color:var(--black-primary);
+  display: flex;
+  gap:0.5rem;
+  justify-content: center;
+  padding:0.5rem;
+  text-align: center;
+  text-decoration: none;
+  width:100%;
+}
+
+@media (min-width:240px) and (max-width:900px){
+  .jumbotronButtons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width:90%;
+  }
+  .jumbotronTitles{
+    justify-content: space-between;
+  }
+  .jumbotronWrapper{
+    background-position: center;
+    height:70vh;
+  }
+  .jumbotronImage{
+    width:50%;
+  }
+  .jumbotronButtons a{
+    background: #ffffffc9;
+  }
 }

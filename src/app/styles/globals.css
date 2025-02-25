@@ -9,7 +9,6 @@
 body{
   font-family: "Josefin Sans", serif;
   font-weight: 500;
-  font-size: 1.3rem;
 }
 /*ui colors*/
 :root{
@@ -25,4 +24,9 @@ body{
   margin:0 auto;
   max-width:1200px;
   width:80%;
+}
+@media (min-width:240px) and (max-width:900px){
+  .flexContainer{
+    width:90%;
+  }
 }
