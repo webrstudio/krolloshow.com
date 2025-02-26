@@ -1,2 +1,5 @@
+export * from './Title/Title'
 export * from './NavBar/NavBar'
 export * from './Container/Container'
+export * from './ProductCard/ProductCard'
+export * from './GridContainer/GridContainer'

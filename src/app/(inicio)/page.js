@@ -1,9 +1,10 @@
-import { Jumbotron } from "./components/home";
+import { Jumbotron, Products } from "./components/home";
 
 export default function Home() {
   return (
     <main>
       <Jumbotron />
+      <Products />
     </main>
   );
 }
