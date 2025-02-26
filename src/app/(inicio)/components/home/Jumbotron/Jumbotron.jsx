@@ -22,13 +22,7 @@ export const Jumbotron = () => {
               href="https://www.tiktok.com/@wilyn_krollo?_t=ZM-8u4v6neWjH5&_r=1"
               target="_blank"
             >
-              <FaTiktok/> <span>Willyn</span>
-            </a>
-            <a
-              href="https://www.facebook.com/krolloshow"
-              target="_blank"
-            >
-              <FaFacebook/> <span>KROLLOSHOW</span>
+              <FaTiktok /> <span>Willyn</span>
             </a>
             <a
               href="https://www.instagram.com/patitas_k_rollo/"
@@ -40,10 +34,41 @@ export const Jumbotron = () => {
               href="https://www.tiktok.com/@patitas_7w7?_t=ZM-8u4v93G0SLW&_r=1"
               target="_blank"
             >
-              <FaTiktok/> <span>Patitas</span>
+              <FaTiktok /> <span>Patitas</span>
             </a>
-            
           </div>
+          <div className={styles.jumbotronButtonsMobile}>
+            <a href="https://www.instagram.com/wilyn_krollo/" target="_blank">
+              <FaInstagram /> <span>Willyn</span>
+            </a>
+            <a
+              href="https://www.instagram.com/patitas_k_rollo/"
+              target="_blank"
+            >
+              <FaInstagram /> <span>Patitas</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@wilyn_krollo?_t=ZM-8u4v6neWjH5&_r=1"
+              target="_blank"
+            >
+              <FaTiktok /> <span>Willyn</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@patitas_7w7?_t=ZM-8u4v93G0SLW&_r=1"
+              target="_blank"
+            >
+              <FaTiktok /> <span>Patitas</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <a
+            href="https://www.facebook.com/krolloshow"
+            target="_blank"
+            className={styles.jumbotronFacebookButton}
+          >
+            <FaFacebook /> <span>KROLLOSHOW</span>
+          </a>
         </div>
       </div>
     </section>

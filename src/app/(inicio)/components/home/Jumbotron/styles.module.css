@@ -1,67 +1,110 @@
-.jumbotronWrapper{
-  background: url('../../../../../../public/assets/images/krollo-banner.jpg');
+.jumbotronWrapper {
+  background: url("../../../../../../public/assets/images/krollo-banner.jpg");
   background-position: bottom;
-  background-size:cover;
-  height:100vh;  
+  background-size: cover;
+  height: 100vh;
 }
-.jumbotronMask{
+.jumbotronMask {
   align-items: center;
   background: #ffffff3f;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  height:100%;
+  height: 100%;
 }
-.jumbotronTitles{
+.jumbotronTitles {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  height:100%;
+  height: 100%;
   justify-content: space-between;
-  padding:2rem 0;  
+  padding: 1rem 0;
   width: 100%;
 }
-.jumbotronImage{
-  width:13%;
+.jumbotronImage {
+  width: 13%;
 }
-.jumbotronButtons{
+.jumbotronButtons {
   align-items: center;
-  display:flex;
-  gap:1rem;
+  display: flex;
+  gap: 1rem;
   justify-content: center;
-  margin:0 auto;
-  width:60%;
+  margin: 0 auto;
+  width: 60%;
 }
-.jumbotronButtons a{
+.jumbotronButtonsMobile {
+  display: none;
+}
+.jumbotronButtons a {
   align-items: start;
   background: var(--white-primary);
   border-radius: 9px;
-  color:var(--black-primary);
+  color: var(--black-primary);
   display: flex;
-  gap:0.5rem;
+  gap: 0.5rem;
   justify-content: center;
-  padding:0.5rem;
+  padding: 0.5rem;
   text-align: center;
   text-decoration: none;
-  width:100%;
+  width: 100%;
 }
-
-@media (min-width:240px) and (max-width:900px){
-  .jumbotronButtons{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    width:90%;
+.jumbotronFacebookButton {
+  align-items: start;
+  background: var(--white-primary);
+  border-radius: 9px;
+  color: var(--black-primary);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media (min-width: 240px) and (max-width: 900px) {
+  .jumbotronButtons {
+    display: none;
   }
-  .jumbotronTitles{
+  .jumbotronButtonsMobile {
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+  }
+  .jumbotronButtonsMobile a {
+    align-items: start;
+    background: var(--white-primary);
+    border-radius: 9px;
+    color: var(--black-primary);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+  }
+  .jumbotronTitles {
     justify-content: space-between;
   }
-  .jumbotronWrapper{
+  .jumbotronWrapper {
     background-position: center;
-    height:70vh;
+    height: 80vh;
   }
-  .jumbotronImage{
-    width:50%;
+  .jumbotronImage {
+    width: 50%;
   }
-  .jumbotronButtons a{
+  .jumbotronButtonsMobile a,
+  .jumbotronFacebookButton {
     background: #ffffffc9;
+  }
+  .jumbotronTitlesMobile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 100%;
   }
 }
