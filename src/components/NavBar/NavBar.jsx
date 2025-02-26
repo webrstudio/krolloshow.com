@@ -39,7 +39,7 @@ export const NavBar = ({ background }) => {
           </li>
           <li>
             <Link
-            href="/"
+            href="/tienda"
             onClick={activeMenu}
             >
               Tienda

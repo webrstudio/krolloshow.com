@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.css'
 import { Container, Title, GridContainer, ProductCard } from '@/components';
 
@@ -11,9 +12,9 @@ export const Products = () => {
         <ProductCard />
       </GridContainer>
       <div className={styles.linkToStoreWrapper}>
-      <a href='/'>
+      <Link href='/tienda'>
         Ver todos
-      </a>
+      </Link>
       </div>
     </Container>
   );

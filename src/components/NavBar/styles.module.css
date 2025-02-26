@@ -48,7 +48,7 @@
     .navList{
         background:#ffffffec;
         gap: 2rem;
-        position: fixed;
+        position: absolute;
         left: -100%;
         right:0;
         top: 3.8rem;
