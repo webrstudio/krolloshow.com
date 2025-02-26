@@ -1,4 +1,5 @@
 export * from './Title/Title'
+export * from './Loader/Loader'
 export * from './NavBar/NavBar'
 export * from './Container/Container'
 export * from './ProductCard/ProductCard'
