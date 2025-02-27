@@ -1,12 +1,14 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./styles.module.css";
 import { IoMdClose } from "react-icons/io";
 import { HiMiniBars3 } from "react-icons/hi2";
+import { ShoppingCartContext } from "@/contexts";
 import { LiaShoppingCartSolid } from "react-icons/lia";
 
 export const NavBar = ({ background }) => {
+  const {products} = useContext(ShoppingCartContext)
   const [isActive, setIsActive] = useState(false);
   const activeMenu = () => setIsActive(!isActive);
   return (
@@ -49,8 +51,10 @@ export const NavBar = ({ background }) => {
             <Link
             href="/"
             onClick={activeMenu}
+            className={styles.navShoppingCart}
             >
-              <LiaShoppingCartSolid className={styles.navShoppingCart} />
+              <LiaShoppingCartSolid/>
+              <span>{products.length}</span>
             </Link>
           </li>
         </ul>

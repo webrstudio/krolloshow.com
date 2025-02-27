@@ -3,6 +3,7 @@ import "./styles/globals.css";
 import { useState, useEffect } from "react";
 import { NavBar, Loader } from "@/components";
 import { usePathname } from "next/navigation";
+import { ShoppingCartProvider } from "@/contexts";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -21,17 +22,19 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="es">
-      <body>
-        {!loading ? (
-          <>
-            {path === "/" ? null : <NavBar background />}
-            {children}
-          </>
-        ) : (
-          <Loader />
-        )}
-      </body>
-    </html>
+    <ShoppingCartProvider>
+      <html lang="es">
+        <body>
+          {!loading ? (
+            <>
+              {path === "/" ? null : <NavBar background />}
+              {children}
+            </>
+          ) : (
+            <Loader />
+          )}
+        </body>
+      </html>
+    </ShoppingCartProvider>
   );
 }

@@ -1,7 +1,11 @@
+'use client'
+import { useContext } from "react";
 import styles from "./styles.module.css";
+import { ShoppingCartContext } from "@/contexts";
 import { LiaShoppingCartSolid } from "react-icons/lia";
 
 export const ProductCard = () => {
+  const {addProduct} = useContext(ShoppingCartContext)
   return (
     <div className={styles.productCardWrapper}>
       <figure className={styles.productImage}>
@@ -12,7 +16,10 @@ export const ProductCard = () => {
       <a href="/" className={styles.productPaymentButton}>
         Comprar ahora
       </a>
-      <button className={styles.productShoppingCartButton}>
+      <button className={styles.productShoppingCartButton} onClick={()=>addProduct({
+        product: 'Playera K Rollo Show',
+        price: '$299.00'
+      })}>
         <LiaShoppingCartSolid />
       </button>
     </div>

@@ -30,6 +30,10 @@
     width:6rem;
 }
 .navShoppingCart{
+    align-items: center;
+    display:flex;
+}
+.navShoppingCart svg{
     font-size: 2rem;
 }
 .buttonMenu{
