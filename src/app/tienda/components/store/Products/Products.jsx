@@ -4,7 +4,7 @@ import { Container, Title, GridContainer, ProductCard } from "@/components";
 
 export const Products = () => {
   const {error, data}= useFetch({
-    url:'http://localhost/k-rollo-tienda/controllers/products/getAllProducts/index.php'
+    url:'https://test.webrstudio.com/backend/controllers/products/getAllProducts'
   })
   return (
     <Container>
