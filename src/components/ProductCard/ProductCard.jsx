@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Swal from "sweetalert2";
 import { useContext } from "react";
 import styles from "./styles.module.css";
 import { ShoppingCartContext } from "@/contexts";
@@ -7,6 +8,16 @@ import { LiaShoppingCartSolid } from "react-icons/lia";
 
 export const ProductCard = ({ product }) => {
   const { addProduct } = useContext(ShoppingCartContext);
+  const showModal = ()=>{
+    Swal.fire({
+      title:'Añadido al carrito',
+      icon:'success',
+      timer:1000,
+      position:'top-end',
+      showConfirmButton:false
+    })
+    return addProduct(product)
+  }
   return (
     <>
       {!product ? null : (
@@ -24,7 +35,7 @@ export const ProductCard = ({ product }) => {
           </Link>
           <button
             className={styles.productShoppingCartButton}
-            onClick={() => addProduct(product)}
+            onClick={showModal}
           >
             <LiaShoppingCartSolid />
           </button>
