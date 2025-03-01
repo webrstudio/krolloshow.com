@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 export const PaymentButtons = ({ paymentAmount }) => {
+  const router = useRouter();
   const paypalOptions = {
     clientId:
       "AThgNMLSW6yJ-eriWWMMxF2LFMUcjtHfHSgyYLfXZ0hnh9lLlvXRcj1-Nr0L4PilRxBsc38wxM7uNrie",
@@ -30,7 +32,7 @@ export const PaymentButtons = ({ paymentAmount }) => {
       const details = await actions.order.capture();
       console.log(details);
       if (details.status === "COMPLETED") {
-        alert(`Transaction completed by ${details.payer.name.given_name}`);
+        router.push('/pago/exitoso')
       }
     } catch (error) {
       alert(error);
