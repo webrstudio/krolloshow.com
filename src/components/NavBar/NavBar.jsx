@@ -49,7 +49,7 @@ export const NavBar = ({ background }) => {
           </li>
           <li>
             <Link
-            href="/"
+            href="/carrito"
             onClick={activeMenu}
             className={styles.navShoppingCart}
             >
