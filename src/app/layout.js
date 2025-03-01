@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { NavBar, Loader } from "@/components";
 import { usePathname } from "next/navigation";
 import { ShoppingCartProvider } from "@/contexts";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -24,20 +23,18 @@ export default function RootLayout({ children }) {
 
   return (
     <ShoppingCartProvider>
-      <PayPalScriptProvider>
-        <html lang="es">
-          <body>
-            {!loading ? (
-              <>
-                {path === "/" ? null : <NavBar background />}
-                {children}
-              </>
-            ) : (
-              <Loader fullScreen/>
-            )}
-          </body>
-        </html>
-      </PayPalScriptProvider>
+      <html lang="es">
+        <body>
+          {!loading ? (
+            <>
+              {path === "/" ? null : <NavBar background />}
+              {children}
+            </>
+          ) : (
+            <Loader fullScreen />
+          )}
+        </body>
+      </html>
     </ShoppingCartProvider>
   );
 }

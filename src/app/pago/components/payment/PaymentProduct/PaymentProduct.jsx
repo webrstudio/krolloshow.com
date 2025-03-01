@@ -18,7 +18,7 @@ export const PaymentProduct = ({ id }) => {
           <div className={styles.productDetailsWrapper}>
             <h3 className={styles.productName}>{data.producto_nombre}</h3>
             <span>Precio: ${data.producto_precio}.00</span>
-            <PaymentButtons />
+            <PaymentButtons paymentAmount={data.producto_precio}/>
           </div>
         </div>
       )}
