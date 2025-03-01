@@ -9,3 +9,10 @@ export default function ShoppingCart(){
         </Container>
     )
 }
+export const metadata = {
+    title: "KROLLOSHOW - CARRITO",
+    description: "KROLLOSHOW",
+    icons: {
+      icon: "/assets/images/krollo-logo.jpg",
+    },
+  };
