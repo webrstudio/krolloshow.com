@@ -1,9 +1,9 @@
 "use client";
 import "./styles/globals.css";
 import { useState, useEffect } from "react";
-import { NavBar, Loader } from "@/components";
 import { usePathname } from "next/navigation";
 import { ShoppingCartProvider } from "@/contexts";
+import { NavBar, Loader, Footer } from "@/components";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
             <>
               {path === "/" ? null : <NavBar background />}
               {children}
+              <Footer />
             </>
           ) : (
             <Loader fullScreen />
