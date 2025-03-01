@@ -1,8 +1,11 @@
 .loaderWrapper{
   align-items: center;
   display:flex;
-  height:100vh;
+  height:100%;
   justify-content: center;
+}
+.loaderWrapperFullScreen{
+  height:100vh;
 }
 .loaderSpinner {
   overflow: hidden;

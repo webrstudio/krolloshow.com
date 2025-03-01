@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
                 {children}
               </>
             ) : (
-              <Loader />
+              <Loader fullScreen/>
             )}
           </body>
         </html>
