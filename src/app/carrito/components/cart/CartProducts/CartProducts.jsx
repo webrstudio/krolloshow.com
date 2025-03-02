@@ -1,8 +1,8 @@
 "use client";
 import styles from "./styles.module.css";
+import { PaymentForm } from "@/components";
 import { ShoppingCartContext } from "@/contexts";
 import { useContext, useState, useEffect } from "react";
-import { PaymentButtons, AddressForm } from "@/components";
 
 export const CartProducts = () => {
   const [total, setTotal] = useState(0);
@@ -47,8 +47,7 @@ export const CartProducts = () => {
           ))}
           <div className={styles.paymentButtons}>
             <span>Total: ${total}.00</span>
-            <AddressForm />
-            <PaymentButtons paymentAmount={total} />
+            <PaymentForm paymentAmount={total}/>
           </div>
         </ul>
       )}

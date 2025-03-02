@@ -1,0 +1,27 @@
+.paymentFormWrapper{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    width:100%;
+}
+.addressFormWrapper{
+    background: var(--yellow-secondary);
+    border-radius: 9px;
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(1fr);  
+    padding:1rem;  
+    width:100%;
+}
+.addressFormWrapper label{
+    font-weight: 350;
+}
+.addressFormWrapper input{
+    width:60%;
+}
+.addressFormWrapper div{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
