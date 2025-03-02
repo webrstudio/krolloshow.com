@@ -6,7 +6,7 @@ export const PaymentButtons = ({ paymentAmount }) => {
   const router = useRouter();
   const paypalOptions = {
     clientId:
-      "AThgNMLSW6yJ-eriWWMMxF2LFMUcjtHfHSgyYLfXZ0hnh9lLlvXRcj1-Nr0L4PilRxBsc38wxM7uNrie",
+      "AdOdnjSyd5POTiJyEHThKOylZfjQ14hN_1L0-c1U5ZYqNzRlrsX19_YViqkuu9soXRRp1GbxTXQ-TAup",
     currency: "MXN",
     intent: "capture",
   };
@@ -17,7 +17,7 @@ export const PaymentButtons = ({ paymentAmount }) => {
           {
             amount: {
               currency_code: "MXN",
-              value: `${paymentAmount}.00`,
+              value: `5.00`,
             },
           },
         ],
