@@ -1,0 +1,15 @@
+.addressFormWrapper{
+    border:1px solid #00000049;
+    border-radius: 9px;
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(2,1fr);
+    padding:0.5rem;    
+    width:100%;
+}
+.addressFormWrapper div{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
