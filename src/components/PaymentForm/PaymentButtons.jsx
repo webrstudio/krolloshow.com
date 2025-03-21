@@ -46,7 +46,6 @@ export const PaymentButtons = ({ paymentAmount }) => {
           createOrder={onCreateOrder}
           style={{ layout: "vertical" }}
           onApprove={onApproveOrder}
-          fundingSource="card"
         />
       </div>
     </PayPalScriptProvider>

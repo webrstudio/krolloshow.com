@@ -5,11 +5,12 @@ import { UserContext } from "@/contexts";
 import { useContext, useState } from "react";
 import { PaymentButtons } from "./PaymentButtons";
 
-export const PaymentForm = ({ paymentAmount }) => {
+export const PaymentForm = ({ paymentAmount, defaultUser }) => {
   const { user, addUser } = useContext(UserContext);
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState(user);
   const onChange = (evt) => {
     setFormData({
+      ...user,
       ...formData,
       [evt.target.name]: evt.target.value,
     });
@@ -27,12 +28,13 @@ export const PaymentForm = ({ paymentAmount }) => {
   };
   return (
     <div className={styles.paymentFormWrapper}>
-      <span>Añade una dirección de envío</span>
+      <span>{! user ? 'Añade una dirección de envío:' : 'Dirección de envío:'}</span>
       <form className={styles.addressFormWrapper} onSubmit={onSubmit}>
         <div>
           <label>Nombre:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_nombre}
             name="usuario_nombre"
             onChange={onChange}
             required
@@ -43,6 +45,7 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Dirección:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_direccion}
             name="usuario_direccion"
             onChange={onChange}
             required
@@ -53,6 +56,7 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Código postal:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_cp}
             name="usuario_cp"
             onChange={onChange}
             required
@@ -63,6 +67,7 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Estado:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_estado}
             name="usuario_estado"
             onChange={onChange}
             required
@@ -73,6 +78,7 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Municipio:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_municipio}
             name="usuario_municipio"
             onChange={onChange}
             required
@@ -83,6 +89,7 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Colonia:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_colonia}
             name="usuario_colonia"
             onChange={onChange}
             required
@@ -93,25 +100,27 @@ export const PaymentForm = ({ paymentAmount }) => {
           <label>Correo electrónico:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_email}
             name="usuario_email"
             onChange={onChange}
             required
-            type="text"
+            type="email"
           />
         </div>
         <div>
           <label>Teléfono:</label>
           <input
             autoComplete="off"
+            defaultValue={!user ? null : user.usuario_telefono}
             name="usuario_telefono"
             onChange={onChange}
             required
-            type="text"
+            type="number"
           />
         </div>
         <button>Guardar dirección de envío</button>
       </form>
-      {!formData ? null : <PaymentButtons paymentAmount={paymentAmount} />}
+      {!user ? null : <PaymentButtons paymentAmount={paymentAmount} />}
     </div>
   );
 };
