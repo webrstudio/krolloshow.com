@@ -1,4 +1,5 @@
 'use client'
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 export const useFetch = ({ url }) => {
@@ -7,10 +8,9 @@ export const useFetch = ({ url }) => {
   const [data, setData] = useState(null);
   const fetchData = async () => {
     try {
-      const response = await fetch(url);
-      const data = await response.json();
-      if (data){
-        setData(data)
+      const response = await axios.get(url);
+      if (response.status===200){
+        setData(response.data)
         setIsLoading(false)
       };
     } catch (error) {

@@ -25,3 +25,28 @@
     justify-content: space-between;
     width:100%;
 }
+.paymentFormButton{
+    border:none;
+    border-radius: 9px;
+    background:var(--yellow-primary);
+    color:var(--black-primary);
+    cursor:pointer;
+    padding:0.5rem;
+    width:100%;
+}
+.paymentLoaderWrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.paymentLoaderSpinner {
+    animation: l2 1s infinite linear;
+    aspect-ratio: 1;
+    border: 8px solid var(--box-shadow);
+    border-radius: 50%;
+    border-right-color: var(--purple-secondary);
+    margin:0 auto;
+    width: 50px;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}

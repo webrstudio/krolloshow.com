@@ -5,7 +5,7 @@ import { Loader, PaymentForm } from "@/components";
 
 export const PaymentProduct = ({ id }) => {
   const { error, data, isLoading } = useFetch({
-    url: `https://test.webrstudio.com/backend/controllers/products/getProductById/index.php?id=${id}`,
+    url: `${process.env.NEXT_PUBLIC_LOCAL_API}products/getProductById/index.php?id=${id}`,
   });
   return (
     <>

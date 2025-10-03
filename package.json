@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.8.2",
+    "@stripe/react-stripe-js": "^5.0.0",
+    "@stripe/stripe-js": "^8.0.0",
+    "axios": "^1.12.2",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

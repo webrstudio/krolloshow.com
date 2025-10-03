@@ -1,53 +1,41 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import axios from "axios";
+import { useState } from "react";
+import styles from './styles.module.css'
+import { PaymentLoader } from "./PaymentLoader";
 
-export const PaymentButtons = ({ paymentAmount }) => {
-  const router = useRouter();
-  const paypalOptions = {
-    clientId:
-      "AThgNMLSW6yJ-eriWWMMxF2LFMUcjtHfHSgyYLfXZ0hnh9lLlvXRcj1-Nr0L4PilRxBsc38wxM7uNrie",
-    currency: "MXN",
-    intent: "capture",
-  };
-  const onCreateOrder = async (data, actions) => {
+export const PaymentButtons = ({ paymentAmount, paymentDetails }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  console.log(paymentDetails)
+  const handleCheckout = async () => {
+    setIsLoading(true)
     try {
-      return await actions.order.create({
-        purchase_units: [
-          {
-            amount: {
-              currency_code: "MXN",
-              value: `${paymentAmount}.00`,
-            },
-          },
-        ],
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_LOCAL_API}/orders/checkoutStripeSession/index.php`, {
+        ...paymentDetails,
+        usuario_carrito:paymentDetails.paymentCart,
+        paymentAmount
       });
-    } catch (error) {
-      alert(error);
-    }
-  };
-
-  const onApproveOrder = async (data, actions) => {
-    try {
-      const details = await actions.order.capture();
-      console.log(details);
-      if (details.status === "COMPLETED") {
-        router.push('/pago/exitoso')
+      console.log(response)
+      if (response.data.url) {
+        setIsLoading(false)
+        window.location.href = response.data.url;
       }
     } catch (error) {
-      alert(error);
+      setIsLoading(false)
+      console.error(error);
     }
   };
 
   return (
-    <PayPalScriptProvider options={paypalOptions}>
-      <div>
-        <PayPalButtons
-          createOrder={onCreateOrder}
-          style={{ layout: "vertical" }}
-          onApprove={onApproveOrder}
-        />
-      </div>
-    </PayPalScriptProvider>
-  );
+    <>
+      {!isLoading ? (
+        <button className={styles.paymentFormButton} onClick={handleCheckout}>
+          Pagar
+        </button>
+      ) : (
+        <PaymentLoader />
+      )}
+    </>
+  )
 };
+
