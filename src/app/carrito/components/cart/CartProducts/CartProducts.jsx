@@ -1,12 +1,15 @@
 "use client";
 import styles from "./styles.module.css";
-import { PaymentButtons } from "@/components";
+import { PaymentForm } from "@/components";
+import { GoPlusCircle } from "react-icons/go";
+import { FiMinusCircle } from "react-icons/fi";
 import { ShoppingCartContext } from "@/contexts";
 import { useContext, useState, useEffect } from "react";
 
 export const CartProducts = () => {
   const [total, setTotal] = useState(0);
-  const { products, addProduct } = useContext(ShoppingCartContext);
+  const { products, addProduct, deleteProduct } =
+    useContext(ShoppingCartContext);
   useEffect(() => {
     if (products.length > 0) {
       const newTotal = products.reduce(
@@ -21,7 +24,7 @@ export const CartProducts = () => {
   return (
     <div className={`flexContainer ${styles.cartProductsWrapper}`}>
       <p>Productos: {products.length}</p>
-      {products.length === 0 ? (
+      {products && products.length === 0 ? (
         <p>No hay productos para mostrar</p>
       ) : (
         <ul className={styles.productsList}>
@@ -33,21 +36,25 @@ export const CartProducts = () => {
               <span>{product.producto_nombre}</span>
               <span>Precio: ${product.producto_precio}.00</span>
               <div className={styles.productsListButtons}>
+                {products.length === product.producto_inventario ? null : (
+                  <button
+                    className={styles.productListAddButton}
+                    onClick={() => addProduct(product)}
+                  >
+                    <GoPlusCircle />
+                  </button>
+                )}
                 <button
-                  className={styles.productListAddButton}
-                  onClick={() => addProduct(product)}
+                  className={styles.productListDeleteButton}
+                  onClick={() => deleteProduct(index)}
                 >
-                  +
+                  <FiMinusCircle />
                 </button>
-                {/*<button className={styles.productListDeleteButton}>
-                    -
-                </button>*/}
               </div>
             </li>
           ))}
           <div className={styles.paymentButtons}>
-            <span>Total: ${total}.00</span>
-            <PaymentButtons paymentAmount={total} />
+            <PaymentForm paymentAmount={total} paymentCart={products} />
           </div>
         </ul>
       )}

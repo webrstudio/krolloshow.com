@@ -12,7 +12,7 @@ import {
 
 export const Products = () => {
   const { error, data, isLoading } = useFetch({
-    url: "https://test.webrstudio.com/backend/controllers/products/getAllProducts",
+    url: `${process.env.NEXT_PUBLIC_LOCAL_API}products/getAllProducts/index.php?marca_id=1`,
   });
   return (
     <Container>

@@ -47,16 +47,18 @@ export const NavBar = ({ background }) => {
               Tienda
             </Link>
           </li>
-          <li>
-            <Link
-            href="/carrito"
-            onClick={activeMenu}
-            className={styles.navShoppingCart}
-            >
-              <LiaShoppingCartSolid/>
-              <span>{products.length}</span>
-            </Link>
-          </li>
+          {/*
+            <li>
+              <Link
+              href="/carrito"
+              onClick={activeMenu}
+              className={styles.navShoppingCart}
+              >
+                <LiaShoppingCartSolid/>
+                <span>{products.length}</span>
+              </Link>
+            </li>
+          */}
         </ul>
       </nav>
     </header>

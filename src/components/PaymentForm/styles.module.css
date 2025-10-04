@@ -1,0 +1,52 @@
+.paymentFormWrapper{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    width:100%;
+}
+.addressFormWrapper{
+    border:1px solid var(--yellow-secondary);
+    border-radius: 9px;
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(1fr);  
+    padding:1rem;  
+    width:100%;
+}
+.addressFormWrapper label{
+    font-weight: 350;
+}
+.addressFormWrapper input{
+    width:60%;
+}
+.addressFormWrapper div{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
+.paymentFormButton{
+    border:none;
+    border-radius: 9px;
+    background:var(--yellow-primary);
+    color:var(--black-primary);
+    cursor:pointer;
+    padding:0.5rem;
+    width:100%;
+}
+.paymentLoaderWrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.paymentLoaderSpinner {
+    animation: l2 1s infinite linear;
+    aspect-ratio: 1;
+    border: 8px solid #00000070;
+    border-radius: 50%;
+    border-right-color: var(--yellow-secondary);
+    margin:0 auto;
+    width: 50px;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}

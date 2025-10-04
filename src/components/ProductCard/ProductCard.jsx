@@ -27,18 +27,27 @@ export const ProductCard = ({ product }) => {
           </figure>
           <span>{product.producto_nombre}</span>
           <span>${product.producto_precio}.00</span>
+          {
+            !product.producto_adicionales ? null
+            :
+            <span className={styles.productAditionals}>{product.producto_adicionales}</span>
+          }
           <Link
             href={`/pago/${product.producto_id}`}
             className={styles.productPaymentButton}
           >
             Comprar ahora
           </Link>
-          <button
-            className={styles.productShoppingCartButton}
-            onClick={showModal}
-          >
-            <LiaShoppingCartSolid />
-          </button>
+          {
+            /*
+              <button
+                className={styles.productShoppingCartButton}
+                onClick={showModal}
+              >
+                <LiaShoppingCartSolid />
+              </button>
+            */
+          }
         </div>
       )}
     </>
